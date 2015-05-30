@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#F44336</color>
+    <color name="primary_dark">#D32F2F</color>
+    <color name="primary_light">#FFCDD2</color>
+    <color name="primary_text">#212121</color>
+    <color name="accent">#FFC107</color>
+    <color name="secondary_text">#727272</color>
+    <color name="divider">#FFFFFF</color>
+    <color name="text">#FFFFFF</color>
+    <color name="white">#FFFFFF</color>
+    <color name="tab_strip">#B42929</color>
+    <color name="blue1">#00AFE4</color>
+    <color name="blue2">#274D7E</color>
+
+        <color name="green">#07C1A2</color>
+    <color name="green2">#03C4C3</color>
+    <color name="blue">#499BF7</color>
+    <color name="whites">#ffffff</color>
+    <color name="common_title">#F9F9F9</color>
+
+</resources>

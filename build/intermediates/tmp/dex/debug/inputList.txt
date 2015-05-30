@@ -1,0 +1,2 @@
+/Users/likaiwen/Android/wireframe/build/intermediates/classes/debug
+/Users/likaiwen/Android/wireframe/build/intermediates/pre-dexed/debug/android-support-v4-24cb55c7bba509d0c89e606bcc1d59f805fa2351.jar

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:hyman="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:longClickable="false"
+    android:id="@+id/sys1">
+
+    <!-- 习惯 -->
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:weightSum="1"
+        android:id="@+id/pp"
+        android:background="@color/white">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/o"
+            android:layout_weight="0.37"
+            android:background="@color/green">
+
+        <include layout="@layout/navigation"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:background="#f4f4f7"
+        android:orientation="vertical"
+        android:id="@+id/l2"
+        android:weightSum="1">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="351dp"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/pppp"
+            android:layout_weight="1"
+            android:background="@color/white">
+
+
+
+            <Button
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="65dp"
+                android:text="电量统计"
+                android:id="@+id/elecStatics"
+                android:background="@color/primary_dark" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/kaiguan"
+                android:src="@drawable/anbei6"
+                android:layout_marginBottom="20dp"
+                android:layout_above="@+id/textView7"
+                android:layout_alignRight="@+id/elecStatics"
+                android:layout_alignEnd="@+id/elecStatics" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="已开启"
+                android:id="@+id/textView5"
+                android:layout_alignBottom="@+id/kaiguan"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="54dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="本日用电：    3.3 kw.h"
+                android:id="@+id/textView6"
+                android:layout_above="@+id/elecStatics"
+                android:layout_alignLeft="@+id/elecStatics"
+                android:layout_alignStart="@+id/elecStatics"
+                android:textColor="@color/primary_text"
+                android:layout_marginBottom="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="本日已开启：4h "
+                android:id="@+id/textView7"
+                android:layout_above="@+id/textView6"
+                android:layout_alignLeft="@+id/textView6"
+                android:layout_alignStart="@+id/textView6"
+                android:textColor="@color/primary_text" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

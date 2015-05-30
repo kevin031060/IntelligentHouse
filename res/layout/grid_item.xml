@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="fill_parent"
+    android:paddingBottom="4dip">
+
+    <ImageButton
+        android:id="@+id/image_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/app_home_shortcuts_button_selector"
+        android:src="@drawable/shortcuts_icon_promotion"
+
+        android:layout_centerHorizontal="true"
+        />
+
+    <TextView
+        android:id="@+id/text_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="添加设备"
+        android:layout_below="@+id/image_item"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>

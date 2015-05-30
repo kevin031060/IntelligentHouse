@@ -1,0 +1,99 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#f4f4f7">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_style"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="45dp" android:orientation="horizontal"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/qq_constact_group"
+        android:layout_marginBottom="10dp">
+        <TextView android:id="@+id/tvApSsid" android:layout_width="wrap_content" android:layout_height="match_parent" android:text="@string/tvApSsidTitle" android:textSize="20sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp" />
+        <TextView android:id="@+id/tvApSssidConnected" android:layout_width="wrap_content" android:layout_height="wrap_content" android:ems="10" android:singleLine="true" android:textSize="24sp"
+            android:layout_marginTop="10dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp">
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/tvApPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/tvPasswordTitle"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp" />
+
+        <EditText
+            android:id="@+id/edtApPassword"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="none"
+            android:singleLine="true"
+            android:text=""
+            tools:ignore="TextFields"
+            android:layout_marginTop="10dp">
+
+        </EditText>
+
+    </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="确认"
+            android:id="@+id/btnConfirm"
+            android:textColor="@color/white"
+            android:background="@color/primary_dark" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_version"
+            android:textSize="16sp"/>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
