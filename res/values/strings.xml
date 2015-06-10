@@ -41,5 +41,6 @@
     <string name="tvApSsidTitle">SSID：</string>
     <string name="tvPasswordTitle">密码：</string>
     <string name="btnConfirmTitle">确认</string>
+    <string name="title_activity_test_http">testHttp</string>
 
 </resources>

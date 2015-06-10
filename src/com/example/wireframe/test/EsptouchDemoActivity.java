@@ -66,6 +66,14 @@ public class EsptouchDemoActivity extends Activity {
         });
 
 
+        findViewById(R.id.buttonTest).setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                QueryElec qe =new QueryElec(EsptouchDemoActivity.this);
+                qe.AddDevice("bulb");
+                startActivity(new Intent(EsptouchDemoActivity.this, SlidingTest.class));
+            }
+        });
 
 
 

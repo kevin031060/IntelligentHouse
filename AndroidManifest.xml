@@ -48,11 +48,7 @@
             android:label="@string/title_activity_gridview"
             android:theme="@android:style/Theme.NoTitleBar" >
         </activity>
-        <activity
-            android:name=".Kaiguan"
-            android:label="@string/title_activity_kaiguan"
-            android:theme="@android:style/Theme.NoTitleBar" >
-        </activity>
+
         <activity
             android:name=".test.SplashActivity"
             android:label="@string/title_activity_splash"
@@ -77,7 +73,10 @@
             android:label="@string/title_activity_esptouch_demo"
             android:theme="@android:style/Theme.Holo" >
         </activity>
-
+        <activity
+            android:name=".test.testHttp"
+            android:label="@string/title_activity_test_http" >
+        </activity>
     </application>
 
 </manifest>

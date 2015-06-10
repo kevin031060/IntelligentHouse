@@ -4,20 +4,13 @@
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/common_title">
+        android:background="@color/green2">
         <RelativeLayout
             android:id="@+id/title_bar"
             android:layout_height="50dp"
             android:layout_width="match_parent"
-            android:background="@color/green">
-            <Button
-                android:id="@+id/title_btn_right"
-                android:layout_height="30dp"
-                android:layout_width="30dp"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="10dp"
-                android:background="@color/common_title" />
+            android:background="@color/green2">
+
             <TextView
                 android:id="@+id/title_txt"
                 android:layout_height="40dp"
@@ -39,24 +32,24 @@
 
 
 
-            <LinearLayout
-                android:id="@+id/common_constact"
-                android:layout_height="wrap_content"
-                android:layout_width="150dp"
-                android:orientation="horizontal"
-                android:layout_centerInParent="true">
-                <Button
-                    android:id="@+id/BtnElect"
-                    style="@style/top_group"
-                    android:text="电量"
-                    android:background="@color/blue1"
-                    android:textColor="@color/white" />
-                <Button
-                    android:id="@+id/btnTemper"
-                    style="@style/top_group"
-                    android:text="温湿度"
-                    android:background="@color/blue1"
-                    android:textColor="@color/white" />
-            </LinearLayout>
+            <!--<LinearLayout-->
+                <!--android:id="@+id/common_constact"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_width="150dp"-->
+                <!--android:orientation="horizontal"-->
+                <!--android:layout_centerInParent="true">-->
+                <!--<Button-->
+                    <!--android:id="@+id/BtnElect"-->
+                    <!--style="@style/top_group"-->
+                    <!--android:text="电量"-->
+                    <!--android:background="#e0000000"-->
+                    <!--android:textColor="@color/white" />-->
+                <!--<Button-->
+                    <!--android:id="@+id/btnTemper"-->
+                    <!--style="@style/top_group"-->
+                    <!--android:text="温湿度"-->
+                    <!--android:background="@color/blue1"-->
+                    <!--android:textColor="@color/white" />-->
+            <!--</LinearLayout>-->
         </RelativeLayout>
     </RelativeLayout>

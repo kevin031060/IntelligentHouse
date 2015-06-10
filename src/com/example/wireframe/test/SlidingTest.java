@@ -40,7 +40,6 @@ public class SlidingTest extends Activity implements PanelSlideListener{
         arc2 = (LinearLayout) findViewById(R.id.layout_yongdian);
         arc.addView(new HomeArc(this, 22));
         arc1.addView(new HomeArc(this, 52));
-        arc2.addView(new HomeArc(this, 82));
 
         //滑动窗口
         findViewById(R.id.slideleft).setOnClickListener(new View.OnClickListener() {

@@ -30,13 +30,8 @@ public class KaiguanTest extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kaiguan_test);
 
-        findViewById(R.id.btnTemper).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(KaiguanTest.this, SlidingTest.class));
-            }
-        });
-        findViewById(R.id.BtnElect).setOnClickListener(new View.OnClickListener() {
+
+        findViewById(R.id.elecStatics).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(KaiguanTest.this, MainActivity.class));
