@@ -4,22 +4,13 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.wireframe.R;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.URL;
+import com.example.wireframe.utils.HttpUtils;
 
 public class KaiguanTest extends Activity {
 
@@ -45,25 +36,8 @@ public class KaiguanTest extends Activity {
         new AsyncTask<Void, Void, String>() {
             @Override
             protected String doInBackground(Void... params) {
-                try {
-                    InputStream in = new URL("http://api.yeelink.net/v1.0/device/18788/sensor/32639/datapoints").openStream();
-                    BufferedReader reader = new BufferedReader(new InputStreamReader(in));
-                    String line =null;
-                    StringBuffer content=new StringBuffer();
-                    while((line=reader.readLine())!=null){
-                        content.append(line);
-                    }
-                    reader.close();
-                    System.out.println(content.toString());
-                    return JsonP(content.toString(),"value");
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-
-                return null;
+                return HttpUtils.doGet("http://api.yeelink.net/v1.0/device/19043/sensor/38510/datapoints", "value");
             }
-
-
             @Override
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
@@ -73,15 +47,17 @@ public class KaiguanTest extends Activity {
                     }else {
                         switchCondition=false;
                     }
+
+                }
+                if(switchCondition){
+                    txtSwitch.setText("已开启");
+                }else {
+                    txtSwitch.setText("已关闭");
                 }
             }
         }.execute();
 
-        if(switchCondition){
-            txtSwitch.setText("已开启");
-        }else {
-            txtSwitch.setText("已关闭");
-        }
+
 
 
         switchOn.setOnClickListener(new View.OnClickListener() {
@@ -89,62 +65,63 @@ public class KaiguanTest extends Activity {
             public void onClick(View v) {
                 if(switchCondition){
                     //关闭开关
-                    txtSwitch.setText("已关闭");
 
-                    switchCondition=false;
+                    new AsyncTask<Void, Void, Void>() {
+                        @Override
+                        protected Void doInBackground(Void... params) {
+                            HttpUtils.doPostJson2("http://api.yeelink.net/v1.0/device/19043/sensor/38510/datapoints","0");
+
+                            return null;
+                        }
+
+                        @Override
+                        protected void onPostExecute(Void aVoid) {
+                            super.onPostExecute(aVoid);
+                            Toast toast=Toast.makeText(getApplicationContext(), "开关已关闭", Toast.LENGTH_SHORT);
+                            //显示toast信息
+                            toast.show();
+                            txtSwitch.setText("已关闭");
+
+                            switchCondition=false;
+                        }
+                    }.execute();
+
+
                 }else {
-                    txtSwitch.setText("已开启");
-                    //
-                    switchCondition=true;
+                    //打开开关
+                    new AsyncTask<Void, Void, Void>() {
+                        @Override
+                        protected Void doInBackground(Void... params) {
+                            HttpUtils.doPostJson2("http://api.yeelink.net/v1.0/device/19043/sensor/38510/datapoints","0");
+
+                            return null;
+                        }
+
+                        @Override
+                        protected void onPostExecute(Void aVoid) {
+                            super.onPostExecute(aVoid);
+                            Toast toast=Toast.makeText(getApplicationContext(), "开关已开启", Toast.LENGTH_SHORT);
+                            toast.show();
+                            txtSwitch.setText("已开启");
+
+                            switchCondition=true;
+                        }
+                    }.execute();
+
                 }
 
 
             }
         });
-    }
 
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_kaiguan_test, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-    public String JsonP(String s, String index){
-
-        String jp;
-        try{
-            if (index.equals("value")) {
-                JSONObject jsonObject = new JSONObject(s);
-                jp = jsonObject.getString("value");
-
-
-            }else{
-                JSONObject jsonObject = new JSONObject(s);
-                jp = jsonObject.getString("timestamp");
+        findViewById(R.id.btnHome).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(KaiguanTest.this,SlidingTest.class ));
             }
+        });
 
-        } catch (JSONException e) {
-            e.printStackTrace();
-            jp=null;
-        }
-
-        return jp;
     }
+
+
 }

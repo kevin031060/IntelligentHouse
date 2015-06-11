@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.example.wireframe.R;
 import com.example.wireframe.model.Devices;
 import com.example.wireframe.test.EsptouchDemoActivity;
+import com.example.wireframe.test.KaiguanKongtiao;
 import com.example.wireframe.test.KaiguanTest;
 
 import java.util.List;
@@ -60,6 +61,12 @@ public class BtnAdapter extends BaseAdapter {
             public void onClick(View v) {
                 if (position==0){
                     Intent intent = new Intent(context, EsptouchDemoActivity.class);
+                    context.startActivity(intent);
+                }else if(position==1){
+                    Intent intent = new Intent(context, KaiguanTest.class);
+                    context.startActivity(intent);
+                }else if(position==2){
+                    Intent intent = new Intent(context, KaiguanKongtiao.class);
                     context.startActivity(intent);
                 }else {
                     Intent intent = new Intent(context, KaiguanTest.class);

@@ -26,7 +26,7 @@
             android:layout_weight="0.37"
             android:background="@color/green">
 
-        <include layout="@layout/navigation"/>
+            <include layout="@layout/navigation"/>
         </RelativeLayout>
 
     </LinearLayout>
@@ -108,17 +108,6 @@
                 android:textSize="@dimen/text_size_20"
                 android:layout_marginTop="30dp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="点击按钮控制开关！"
-                android:id="@+id/textView8"
-                android:textColor="@android:color/darker_gray"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="50dp"
-                />
-
             <Button
                 android:layout_width="250dp"
                 android:layout_height="35dp"
@@ -131,6 +120,45 @@
                 android:layout_alignLeft="@+id/elecStatics"
                 android:layout_alignStart="@+id/elecStatics"
                 android:layout_marginBottom="10dp" />
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="调整空调温度"
+                    android:id="@+id/textView9"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/primary_text"
+                    android:layout_marginBottom="10dp" />
+
+                <Button
+                    android:layout_width="250dp"
+                    android:layout_height="35dp"
+                    android:text="设定温度"
+                    android:id="@+id/btn_changeTem"
+                    android:background="@drawable/qq_constact_group"
+                    android:textSize="@dimen/text_size_16"
+                    android:textColor="@color/green2"
+                    android:layout_below="@+id/textView9"
+                    android:layout_marginBottom="10dp"
+                    android:layout_centerHorizontal="true" />
+
+                <Spinner
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/spinTemper"
+                    android:layout_toRightOf="@+id/textView9"
+                    android:layout_toEndOf="@+id/textView9"
+
+                    android:spinnerMode="dropdown" />
+            </RelativeLayout>
 
         </RelativeLayout>
 

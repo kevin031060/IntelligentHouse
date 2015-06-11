@@ -1,7 +1,5 @@
 package com.example.wireframe.utils;
 
-import android.os.AsyncTask;
-
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
@@ -23,68 +21,39 @@ import java.net.URL;
  */
 public class HttpUtils {
 
-    private static String resultGet="ll";
-    private static final String APPLICATION_JSON = "application/json";
-
-    private static final String CONTENT_TYPE_TEXT_JSON = "text/json";
-
     public HttpUtils(){
 
     }
 
+
     public static String doGet(String url, String key){
-        new doAsyncGet().execute(url,key);
-        return resultGet;
-    }
 
-
-
-    private static class doAsyncGet extends AsyncTask<String,Void,String>{
-
-//
-//        private String result;
-
-            protected String doInBackground(String... params) {
-
-                try {
-                    InputStream in = new URL(params[0]).openStream();
-                    BufferedReader reader = new BufferedReader(new InputStreamReader(in));
-                    String line =null;
-                    StringBuffer content=new StringBuffer();
-                    while((line=reader.readLine())!=null){
-                        content.append(line);
-                    }
-                    reader.close();
-
-                    System.out.println(content.toString());
-                    resultGet = JsonP(content.toString(),params[1]);
-
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-
-                return null;
+        String result="";
+        try {
+            InputStream in = new URL(url).openStream();
+            BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+            String line =null;
+            StringBuffer content=new StringBuffer();
+            while((line=reader.readLine())!=null){
+                content.append(line);
             }
+            reader.close();
 
+            System.out.println(content.toString());
+            result = JsonP(content.toString(),key);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return result;
     }
 
+    public static void doPostJson2(String url, String tem) {
 
+//Send json indicating entity body
+        String encoderJson =  "{\"value\":"+tem+"}";
 
-
-
-
-    public static void doPostJson2(String url) {
-
-//
-//        String encoderJson = "{" +
-//                "  \"timestamp\":\"2015-06-10T16:13:14\"," +
-//                "  \"value\":\"20\"" +
-//                "}";
-
-
-        String encoderJson =  "{\"value\":0}";
-
-
+// Use httpClient to post json
         DefaultHttpClient httpclient = new DefaultHttpClient();
         HttpPost httpPost = new HttpPost(url);
 
@@ -93,10 +62,11 @@ public class HttpUtils {
             StringEntity se = new StringEntity(encoderJson);
 
             httpPost.setEntity(se);
+// API key needed
             httpPost.addHeader("U-ApiKey", "f4beef91284d8f240276802d883d89ff");
             HttpResponse response = httpclient.execute(httpPost);
             HttpEntity resEntity = response.getEntity();
-
+// Get response code
             InputStreamReader reader = new InputStreamReader(resEntity.getContent(), "ISO-8859-1");
             char[] buff = new char[1024];
             int length = 0;

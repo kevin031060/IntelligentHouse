@@ -28,13 +28,13 @@ public class testHttp extends Activity {
             @Override
             public void onClick(View v) {
                 TextView tw =(TextView)findViewById(R.id.textView5);
-                //tw.setText(HttpUtils.doGet("http://192.168.0.110:8080/CeshiKaiguan/xianshishuju?id={\"value\":90}","value"));
+                tw.setText(HttpUtils.doGet("http://api.yeelink.net/v1.0/device/19043/sensor/38510/datapoints","value"));
                 new AsyncTask<Void, Void, Void>() {
                     @Override
                     protected Void doInBackground(Void... params) {
                         Date s = new Date();
                        // HttpUtils.doPost("http://192.168.0.110:8080/CeshiKaiguan/xianshishuju","09","28");
-                        HttpUtils.doPostJson2("http://api.yeelink.net/v1.0/device/19043/sensor/38510/datapoints");
+                        HttpUtils.doPostJson2("http://api.yeelink.net/v1.0/device/19043/sensor/38510/datapoints","1");
 
                         return null;
                     }

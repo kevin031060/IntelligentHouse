@@ -17,9 +17,7 @@ import com.example.wireframe.model.Devices;
 import com.example.wireframe.utils.HomeArc;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class SlidingTest extends Activity implements PanelSlideListener{
 
@@ -41,6 +39,7 @@ public class SlidingTest extends Activity implements PanelSlideListener{
         arc.addView(new HomeArc(this, 22));
         arc1.addView(new HomeArc(this, 52));
 
+        arc2.addView(new HomeArc(this,28));
         //滑动窗口
         findViewById(R.id.slideleft).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -103,27 +102,39 @@ public class SlidingTest extends Activity implements PanelSlideListener{
     public List<Devices> getData(){
 
         List<Devices> devices = new ArrayList<Devices>();
+        //Add Devices Btton
         Devices device0 =new Devices();
         device0.setName("添加设备");
         device0.setImage(R.drawable.addbutton);
         devices.add(device0);
+        //Bulb Button
+        Devices device1 =new Devices();
+        device1.setName("卧室灯");
+        device1.setImage(R.drawable.bulb);
+        devices.add(device1);
+        //AirConditioner Button
+        Devices device2 =new Devices();
+        device2.setName("空调");
+        device2.setImage(R.drawable.shortcuts_icon_promotion);
+        devices.add(device2);
+
 
         // GridView 得到设备列表
-        List<Map<String, Object>> items = new ArrayList<Map<String,Object>>();
-        Map<String, Object> item0 = new HashMap<String, Object>();
-        item0.put("imageItem", R.drawable.addbutton);//添加图像资源的ID
-        item0.put("textItem", "添加新设备");//按序号添加ItemText
-        items.add(item0);
+//        List<Map<String, Object>> items = new ArrayList<Map<String,Object>>();
+//        Map<String, Object> item0 = new HashMap<String, Object>();
+//        item0.put("imageItem", R.drawable.addbutton);//添加图像资源的ID
+//        item0.put("textItem", "添加新设备");//按序号添加ItemText
+//        items.add(item0);
         //调用数据库
         QueryElec qe = new QueryElec(this);
         Cursor c = qe.GetDevices();
         while (c.moveToNext()){
 
-            Map<String, Object> item = new HashMap<String, Object>();
-            item.put("imageItem", R.drawable.bulb);//添加图像资源的ID
-            item.put("textItem", c.getString(c.getColumnIndex("name")) );//按序号添加ItemText
-            items.add(item);
-            System.out.println("kkkkk"+c.getString(c.getColumnIndex("name")));
+//            Map<String, Object> item = new HashMap<String, Object>();
+//            item.put("imageItem", R.drawable.bulb);//添加图像资源的ID
+//            item.put("textItem", c.getString(c.getColumnIndex("name")) );//按序号添加ItemText
+//            items.add(item);
+//            System.out.println("kkkkk"+c.getString(c.getColumnIndex("name")));
 
             //
 
@@ -132,6 +143,7 @@ public class SlidingTest extends Activity implements PanelSlideListener{
             device.setImage(R.drawable.bulb);
             devices.add(device);
         }
+
 
         c.close();
         return devices;

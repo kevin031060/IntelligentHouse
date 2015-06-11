@@ -18,7 +18,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="20dp"
-        android:background="@drawable/qq_constact_group"
+        android:background="@drawable/login_type"
         android:layout_marginBottom="10dp">
         <TextView android:id="@+id/tvApSsid" android:layout_width="wrap_content" android:layout_height="match_parent" android:text="@string/tvApSsidTitle" android:textSize="20sp"
             android:layout_marginTop="10dp"
@@ -34,7 +34,8 @@
         android:layout_marginTop="10dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginBottom="20dp">
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/login_type">
 
         <Space
             android:layout_width="wrap_content"
@@ -85,19 +86,6 @@
             android:id="@+id/btnConfirm"
             android:textColor="@color/white"
             android:background="@color/green2" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/app_version"
-            android:textSize="16sp"/>
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Button"
-            android:id="@+id/buttonTest"
-            android:layout_gravity="center_horizontal" />
 
     </LinearLayout>
 

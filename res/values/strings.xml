@@ -42,5 +42,6 @@
     <string name="tvPasswordTitle">密码：</string>
     <string name="btnConfirmTitle">确认</string>
     <string name="title_activity_test_http">testHttp</string>
+    <string name="title_activity_kaiguan_kongtiao">KaiguanKongtiao</string>
 
 </resources>
