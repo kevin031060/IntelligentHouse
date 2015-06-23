@@ -7,14 +7,14 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.example.wireframe.R;
 import com.example.wireframe.utils.HomeArc1;
 import com.example.wireframe.utils.HomeColumnar;
 import com.example.wireframe.utils.HomeDiagram;
 import com.example.wireframe.utils.Score;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends Activity {
 

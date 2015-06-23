@@ -36,9 +36,9 @@ public class SlidingTest extends Activity implements PanelSlideListener{
         arc = (LinearLayout) findViewById(R.id.layout_temp);//圆弧计分
         arc1 = (LinearLayout) findViewById(R.id.layout_shidu);
         arc2 = (LinearLayout) findViewById(R.id.layout_yongdian);
-        arc.addView(new HomeArc(this, 22));
-        arc1.addView(new HomeArc(this, 52));
 
+        arc.addView(new HomeArc(this,Integer.parseInt(getIntent().getStringExtra("wendu"))));
+        arc1.addView(new HomeArc(this,Integer.parseInt(getIntent().getStringExtra("shidu"))));
         arc2.addView(new HomeArc(this,28));
         //滑动窗口
         findViewById(R.id.slideleft).setOnClickListener(new View.OnClickListener() {
